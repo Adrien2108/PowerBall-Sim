@@ -83,10 +83,10 @@ for drawing in range(num_drawings):
         win_amt = calc_win_amt(my_numbers, winning_num)
         earnings += win_amt
 
-hit_jp = False
+'''hit_jp = False
 drawings = 0
 years = 0
-'''while True:
+while True:
     drawings += 1
     white_drawing = set(random.sample(white_possibles, k=5))
     red_drawing = random.choice(red_possibles)
