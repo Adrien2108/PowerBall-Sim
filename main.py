@@ -50,15 +50,13 @@ def calc_win_amt(my_numbers, winning_num):
             times_won["3+P"] += 1
         else:
             win_amt = 7
-            times_won["3"] +=1
-    elif white_matches == 2:
-        if power_match:
-            win_amt = 7
-            times_won["2+P"] += 1
-    elif white_matches == 1:
-        if power_match:
-            win_amt = 4
-            times_won["1+P"] += 1
+            times_won["3"] += 1
+    elif white_matches == 2 and power_match:
+        win_amt = 7
+        times_won["2+P"] += 1
+    elif white_matches == 1 and power_match:
+        win_amt = 4
+        times_won["1+P"] += 1
     elif white_matches == 0 and power_match:
         win_amt = 4
         times_won["P"] += 1
@@ -83,10 +81,10 @@ for drawing in range(num_drawings):
         win_amt = calc_win_amt(my_numbers, winning_num)
         earnings += win_amt
 
-'''hit_jp = False
+hit_jp = False
 drawings = 0
 years = 0
-while True:
+'''while True:
     drawings += 1
     white_drawing = set(random.sample(white_possibles, k=5))
     red_drawing = random.choice(red_possibles)
